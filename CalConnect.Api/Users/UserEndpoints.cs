@@ -31,6 +31,7 @@ internal static class UserEndpoints
             return user is not null ? Results.Ok(user) : Results.NotFound();
         })
         .WithTags(Tag);
+        .RequireAuthorization();
 
         return builder;
     }
