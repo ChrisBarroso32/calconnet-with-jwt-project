@@ -13,6 +13,7 @@ builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseNpgsql(builder.Configuration.GetConnectionString("Database")).UseSnakeCaseNamingConvention());
 
 builder.Services.AddSingleton<PasswordHasher>();
+builder.Services.AddSingleton<TokenProvider>();
 builder.Services.AddScoped<EmailVerificationLinkFactory>();
 
 builder.Services.AddHttpContextAccessor();
